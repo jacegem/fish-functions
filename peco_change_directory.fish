@@ -5,6 +5,9 @@ function _peco_change_directory
         peco --layout=bottom-up | perl -pe 's/([ ()])/\\\\$1/g' | read foo
     end
     if [ $foo ]
+        if not test -d $foo
+            set foo (string split -r -m1 "/" -- $foo)[1]
+        end
         builtin cd $foo
         commandline -r ''
         commandline -f repaint
@@ -17,7 +20,7 @@ function peco_change_directory
     begin
         echo $HOME/.config
         ghq list -p
-        ls -ad */ | perl -pe "s#^#$PWD/#" | grep -v \.git
+        ls -ad * | perl -pe "s#^#$PWD/#" | grep -v \.git
         ls -ad $HOME/workspace/*/* | grep -v \.git
     end | sed -e 's/\/$//' | awk '!a[$0]++' | _peco_change_directory $argv
 end
