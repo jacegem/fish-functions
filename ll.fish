@@ -1,3 +1,3 @@
-function ll -d 'long list files in directory recursively as tree with exa' -w exa
-    command exa --icons -lT --group-directories-first --git --color always $argv
+function ll -d 'list files with exa' -w exa
+    command exa --icons -l --group-directories-first $argv
 end
