@@ -1,3 +1,3 @@
-function poetry --wraps='python3 /Users/john/.poetry/bin/poetry' --description 'alias poetry=python3 /Users/john/.poetry/bin/poetry'
-  python3 /Users/john/.poetry/bin/poetry $argv; 
+function poetry --wraps='python3 $HOME/.poetry/bin/poetry' --description 'alias poetry=python3 $HOME/.poetry/bin/poetry'
+    python3 $HOME/.poetry/bin/poetry $argv
 end
