@@ -13,7 +13,8 @@ function fish_user_key_bindings
     # PATH
     set PATH $PATH ~/.poetry/bin
     set PATH $PATH ~/.fzf/bin
-    set PATH $PATH ~/.doom.d/bin
+    set PATH $PATH ~/.emacs.d/bin
+    set PATH $PATH ~/sdk/flutter/bin
 
     # Variables
     set -g theme_display_git no
